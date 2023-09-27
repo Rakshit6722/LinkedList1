@@ -73,6 +73,27 @@ public class LL {
         return val;//returning deleted value;
     }
 
+    //to get a particular reference of an index
+    public Node get(int idx){
+        Node temp = head;
+        for(int i=0;i<idx;i++){
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    //delete last
+    public int deleteLast(){
+        if(size<=1){
+            return deleteFirst();
+        }
+        Node secondLast = get(size-2);//get to index before the current tail 
+        int val = tail.value;
+        tail = secondLast; //point tail to new node
+        tail.next=null; //point new node tail to null
+        return val;
+    }
+
 
 
     //print linked list
