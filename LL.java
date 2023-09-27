@@ -84,15 +84,33 @@ public class LL {
 
     //delete last
     public int deleteLast(){
-        if(size<=1){
+        if(size<=1){//if it has only one element
             return deleteFirst();
         }
         Node secondLast = get(size-2);//get to index before the current tail 
         int val = tail.value;
         tail = secondLast; //point tail to new node
         tail.next=null; //point new node tail to null
+        size--;
         return val;
     }
+
+    //delete at given index
+     public int deleteAt(int idx){
+        if(idx==1){
+            return deleteFirst();
+            
+        }
+        if(idx==size){
+            return deleteLast();
+            
+        }
+        Node prev = get(idx-1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+        size--;
+        return val;
+     }
 
 
 
