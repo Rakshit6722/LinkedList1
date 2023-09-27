@@ -10,6 +10,8 @@ public class LL {
     public LL() { // initialize size everytime a linked list is created
         this.size = 0;
     }
+
+    //inserting at first position
     public void insertFirst(int val){
         Node node = new Node(val); //create a new node
         node.next = head; //point node.next -> current head
@@ -22,10 +24,11 @@ public class LL {
         size++;//incrementing the size as new node are added to the LL
     }
 
+    //inserting at last position
     public void insertLast(int val){
         if(tail==null){
             insertFirst(val);
-            return;
+            return;  
         }
         Node node = new Node(val);
         tail.next = node;
@@ -33,6 +36,27 @@ public class LL {
         size++;
     }
 
+    //insert at given index
+    public void insertAt(int val, int idx){
+        if(idx==0){
+            insertFirst(val);
+            return;
+        }
+        if(idx==size){
+            insertLast(val);
+        }
+        Node temp = head;
+        int i = 1;
+        while(i<idx){
+            temp = temp.next;
+            i++;
+        }
+        Node node = new Node(val, temp.next);
+        temp.next = node;
+        size++;
+    }
+
+    //print linked list
     public void display(){
         Node temp = head;
         while(temp!=null){
@@ -43,6 +67,7 @@ public class LL {
     }
     
 
+    //Node class
     private class Node {
         private int value;
         private Node next;
