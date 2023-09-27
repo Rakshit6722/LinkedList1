@@ -11,6 +11,9 @@ public class Main {
         list.insertLast(10);
         list.insertAt(23, 1);
         list.display(); 
-        
+        list.deleteFirst();
+        System.out.println();
+        list.display();
+         
     }
 }

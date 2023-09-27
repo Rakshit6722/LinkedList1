@@ -11,6 +11,9 @@ public class LL {
         this.size = 0;
     }
 
+
+    //INSERTION
+
     //inserting at first position
     public void insertFirst(int val){
         Node node = new Node(val); //create a new node
@@ -55,6 +58,16 @@ public class LL {
         temp.next = node;
         size++;
     }
+
+
+    //DELETION
+
+    //delete first
+    public void deleteFirst(){
+        head = head.next;
+    }
+
+
 
     //print linked list
     public void display(){
