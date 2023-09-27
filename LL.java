@@ -63,8 +63,14 @@ public class LL {
     //DELETION
 
     //delete first
-    public void deleteFirst(){
+    public int deleteFirst(){
+        int val = head.value;//fetching the value of head to be deleted
         head = head.next;
+        if(head==null){
+            tail = null;
+        }
+        size--;
+        return val;//returning deleted value;
     }
 
 
