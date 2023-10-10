@@ -105,9 +105,9 @@ public class LL {
             return deleteLast();
             
         }
-        Node prev = get(idx-1);
-        int val = prev.next.value;
-        prev.next = prev.next.next;
+        Node prev = get(idx-1);//reach one node prev to node to be deleted
+        int val = prev.next.value;//get deleted node value
+        prev.next = prev.next.next;//point current node to node.next.next
         size--;
         return val;
      }
@@ -122,6 +122,18 @@ public class LL {
             temp = temp.next;
         }
         System.out.print("NULL");
+    }
+
+    //find particular node
+    public Node find(int val){
+        Node temp = head;
+        while(temp!=null){
+            if(temp.value==val){
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
     }
     
 
